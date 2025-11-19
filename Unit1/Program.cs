@@ -1,2 +1,3 @@
 ﻿Console.WriteLine("Hello, World!");
-Console.WriteLine("Takito y Yaki molan mogollon");
+var solucion = "Takito y Yaki molan mogollon";
+Console.WriteLine(solucion);
