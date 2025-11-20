@@ -1,19 +1,37 @@
 ﻿using Unit1.Exercise1;
 
-namespace  NetKnowHow;
-class Program
+namespace  Unit1;
+public class Program
 {
     private const string Separator = "-----------------------------";
-    static void Main(string[] args)
+
+    public static void Main(string[] args)
     {
-        Persona student = new Persona("Manuel", 29, false, true);
-        Console.WriteLine(student.ToString());
-        Console.WriteLine(Separator);
-        Console.WriteLine("Ending studies...");
-        student.endStudies();
-        Console.WriteLine(Separator);
-        // after called this method, the studies of the student have ended or started
-        Console.WriteLine(student.ToString());
+        var program = new Program();
+    }
+
+    public Program()
+    {
+        var student1 = new Persona("Natalia", 25, true, true); 
         
+        Console.WriteLine(student1.Information);
+        Console.WriteLine(Separator);
+        
+        Console.WriteLine("Ending studies...");
+        student1.EndStudies();
+        Console.WriteLine(Separator);
+        Console.WriteLine(student1.Information);
+        
+        Console.WriteLine(Separator);
+        
+        var student2 = new Persona("Manuel", 29, false, true);
+        
+        Console.WriteLine(student2.Information);
+        Console.WriteLine(Separator);
+        
+        Console.WriteLine("Beginning studies...");
+        student2.BeginStudies();
+        Console.WriteLine(Separator);
+        Console.WriteLine(student2.Information);
     }
 }

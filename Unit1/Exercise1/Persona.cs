@@ -15,45 +15,31 @@ public class Persona
         _havePets = havePets;
     }
 
-    public void endStudies()
+    public string Name { get => _name; set => _name = value; }
+    
+    public int Age { get => _age; set => _age = value; }
+    
+    public bool IsStudent { get => _isStudent; set => _isStudent = value; }
+    
+    public bool HavePets { get => _havePets; set => _havePets = value; }
+    
+    public string Information => $"The student is called {Name}. He is {Age} years old.\nIs studying? {GetVariableInfo(IsStudent)}.\nOwn pets? {GetVariableInfo(HavePets)}.";
+
+    public void BeginStudies()
     {
-        if (IsStudent == true)
+        if (!_isStudent)
         {
-            IsStudent = false;
+            _isStudent = true;
         }
-        else
+    }
+    
+    public void EndStudies()
+    {
+        if (_isStudent)
         {
-            IsStudent = true;
+            _isStudent = false;
         }
     }
 
-    public string Name 
-    { 
-        get => _name; 
-        set => _name = value; 
-    }
-    
-    public int Age 
-    { 
-        get => _age; 
-        set => _age = value; 
-    }
-    
-    public bool IsStudent 
-    { 
-        get => _isStudent; 
-        set => _isStudent = value; 
-    }
-    
-    public bool HavePets 
-    { 
-        get => _havePets; 
-        set => _havePets = value; 
-    }
-    
-
-    public override string ToString()
-    {
-        return "The student is called " + Name +".\n The student is " + Age + " old"+ ".\nIs the student studying? " + IsStudent + ".\nThe student have any pets? " + HavePets;
-    }
+    private string GetVariableInfo(bool variableInfo) => variableInfo ? "Yes" : "No";
 }
