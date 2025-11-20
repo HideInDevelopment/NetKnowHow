@@ -7,12 +7,7 @@ public class Program
 
     public static void Main(string[] args)
     {
-        var program = new Program();
-    }
-
-    public Program()
-    {
-        var student1 = new Persona("Natalia", 25, true, true); 
+        var student1 = new Person("Natalia", 25, true, true); 
         
         Console.WriteLine(student1.Information);
         Console.WriteLine(Separator);
@@ -24,7 +19,7 @@ public class Program
         
         Console.WriteLine(Separator);
         
-        var student2 = new Persona("Manuel", 29, false, true);
+        var student2 = new Person("Manuel", 29, false, true);
         
         Console.WriteLine(student2.Information);
         Console.WriteLine(Separator);
