@@ -1,3 +1,5 @@
+using Unit1.Exercise2; //this is how I import the enum
+
 namespace Unit1.Exercise1;
 
 public class Person
@@ -5,14 +7,15 @@ public class Person
     private string _name;
     private int _age;
     private bool _isStudent;
-    private bool _havePets;
+   // private bool _havePets;
+   private List<TypeAnimal> _animals;
 
     public Person(string name, int age, bool isStudent, bool havePets)
     {
         _name = name;
         _age = age;
         _isStudent = isStudent;
-        _havePets = havePets;
+       // _havePets = havePets;
     }
 
     public string Name { get => _name; set => _name = value; }
@@ -21,9 +24,11 @@ public class Person
     
     public bool IsStudent { get => _isStudent; set => _isStudent = value; }
     
-    public bool HavePets { get => _havePets; set => _havePets = value; }
+    public List<TypeAnimal> Animals { get => _animals; set => _animals = value; }
     
-    public string Information => $"The student is called {Name}. He is {Age} years old.\nIs studying? {GetVariableInfo(IsStudent)}.\nOwn pets? {GetVariableInfo(HavePets)}.";
+    //public bool HavePets { get => _havePets; set => _havePets = value; }
+    
+    //public string Information => $"The student is called {Name}. He is {Age} years old.\nIs studying? {GetVariableInfo(IsStudent)}.\nOwn pets? {GetVariableInfo(HavePets)}.";
 
     public void BeginStudies()
     {
