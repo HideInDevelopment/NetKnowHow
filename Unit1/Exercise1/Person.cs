@@ -8,14 +8,14 @@ public class Person
     private int _age;
     private bool _isStudent;
    // private bool _havePets;
-   private List<TypeAnimal> _animals;
+   private List<Animal> _animals;
 
-    public Person(string name, int age, bool isStudent, bool havePets)
+    public Person(string name, int age, bool isStudent)
     {
         _name = name;
         _age = age;
         _isStudent = isStudent;
-       // _havePets = havePets;
+        _animals = new List<Animal>(); //I initialize it so that it is never null
     }
 
     public string Name { get => _name; set => _name = value; }
@@ -24,7 +24,7 @@ public class Person
     
     public bool IsStudent { get => _isStudent; set => _isStudent = value; }
     
-    public List<TypeAnimal> Animals { get => _animals; set => _animals = value; }
+    public List<Animal> Animals { get => _animals; } //I remove the set so that animals can only be added by other methods
     
     //public bool HavePets { get => _havePets; set => _havePets = value; }
     
@@ -45,6 +45,12 @@ public class Person
             _isStudent = false;
         }
     }
+
+    // This method is for Program.cs
+    // public void addAnimal(Animal animal)
+    // {
+    //         _animals.Add(animal);
+    // }
 
     private string GetVariableInfo(bool variableInfo) => variableInfo ? "Yes" : "No";
 }
