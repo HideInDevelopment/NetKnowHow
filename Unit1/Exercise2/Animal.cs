@@ -27,11 +27,11 @@ public class Animal
     public bool IsAggressive { get => _isAggressive; set => _isAggressive = value; }
     
     public TypeAnimal Type { get => _type; set => _type = value; }
-    
-    private string GetVariableInfo(bool variableInfo) => variableInfo ? "Yes" : "No";
 
     public override string ToString()
     {
         return $"The name of the animal is {Name}, he/she is {Age} years old, and the weight is {Weight}, The pet is aggressive? {GetVariableInfo(_isAggressive)}";
     }
+    
+    private string GetVariableInfo(bool variableInfo) => variableInfo ? "Yes" : "No";
 }
