@@ -7,23 +7,14 @@ public class Person
     private string _name;
     private int _age;
     private bool _isStudent;
-   // private bool _havePets;
    private List<Animal> _animals;
 
-    public Person(string name, int age, bool isStudent,  List<Animal> animals)
+    public Person(string name, int age, bool isStudent,  List<Animal>? animals = null) //animals = null because we want the parameter opcional
     {
         _name = name;
         _age = age;
         _isStudent = isStudent;
-        _animals = animals;
-    }
-    
-    public Person(string name, int age, bool isStudent)
-    {
-        _name = name;
-        _age = age;
-        _isStudent = isStudent;
-        _animals = new List<Animal>(); //I initialize it so that it is never null
+        _animals = animals ?? new List<Animal>(); //if animals is not null, use it, if it is null we create a new list empty
     }
 
     public string Name { get => _name; set => _name = value; }
@@ -59,7 +50,7 @@ public class Person
     
     private string GetVariableInfo(bool variableInfo) => variableInfo ? "Yes" : "No";
     
-    public void addAnimal(Animal animal)
+    public void AddAnimal(Animal animal)
     {
             _animals.Add(animal);
     }
@@ -68,14 +59,9 @@ public class Person
     {
         if (_animals.Count == 1)
         {
-            var animalList = _animals[0];
-            return animalList.ToString();
+            var animal = _animals[0];
+            return animal.ToString();
         }
-        else
-        {
-            var animalsList = string.Join(",", _animals.Select(animal => animal.Name));
-            return animalsList;
-        }
-        
+        return string.Join(",", _animals.Select(x => x.Name));
     }
 }

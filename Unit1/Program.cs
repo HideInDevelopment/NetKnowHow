@@ -41,13 +41,11 @@ public class Program
     {
         Console.WriteLine("Do u want to add a Animal? yes (y) or no (press any other key)");
         var answer = Console.ReadLine();
-        if (answer.ToLower() == "y")
+        if (answer.ToLower().Equals("y"))
         {
-            student.addAnimal(pet);
+            student.AddAnimal(pet);
+            return;
         }
-        else
-        {
-            Console.WriteLine("You choose to not add a pet.");
-        }
+        Console.WriteLine("You choose to not add a pet.");
     }
 }
